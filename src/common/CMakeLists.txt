@@ -1,0 +1,34 @@
+
+IF(COMMON_HEADERS_PATH)
+	INCLUDE_DIRECTORIES(${COMMON_HEADERS_PATH})
+
+	FIND_FILE(COMMON_HEADERS
+		NAMES
+		LFInterface.h
+		LFData.h
+		LFMeasurement.h
+		LFMeasurementInfo.h
+		LFSubject.h
+		LFProject.h
+		LFHPIMeasurement.h
+		PATHS
+		${COMMON_HEADERS_PATH}
+		NO_DEFAULT_PATH
+	)
+	message(COMMON_HEADERS_PATH: ${COMMON_HEADERS_PATH})
+ENDIF(COMMON_HEADERS_PATH)
+
+IF(COMMON_SOURCES_PATH)
+	FIND_FILE(COMMON_SOURCES
+		NAMES
+		LFData.cpp
+		LFMeasurement.cpp
+		LFMeasurementInfo.cpp
+		LFSubject.cpp
+		LFProject.cpp
+		LFHPIMeasurement.cpp
+		PATHS
+		${COMMON_SOURCES_PATH}
+		NO_DEFAULT_PATH
+	)
+ENDIF(COMMON_SOURCES_PATH)
