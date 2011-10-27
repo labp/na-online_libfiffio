@@ -1,60 +1,91 @@
+#include <float.h>
 #include "LFHPIMeasurement.h"
+
+LFHPIMeasurement::LFHPIMeasurement() :
+    m_SamplingFrequency( -FLT_MAX ), m_NumberOfChannels( -1 ), m_NumberOfAverages( -1 ), m_NumberOfHPICoils( -1 ), m_FirstSample(
+                    -1 ), m_LastSample( -1 )
+{
+
+}
+
+void LFHPIMeasurement::Init()
+{
+    m_SamplingFrequency = -FLT_MAX;
+    m_NumberOfChannels = -1;
+    m_NumberOfAverages = -1;
+    m_NumberOfHPICoils = -1;
+    m_FirstSample = -1;
+    m_LastSample = -1;
+    m_LFHPICoil.Init();
+    m_LFIsotrak.Init();
+}
 
 float LFHPIMeasurement::GetSamplingFrequency()
 {
     return m_SamplingFrequency;
 }
 
-unsigned long LFHPIMeasurement::GetNumberOfChannels()
+int32_t LFHPIMeasurement::GetNumberOfChannels()
 {
     return m_NumberOfChannels;
 }
 
-unsigned long LFHPIMeasurement::GetNumberOfAverages()
+int32_t LFHPIMeasurement::GetNumberOfAverages()
 {
     return m_NumberOfAverages;
 }
 
-unsigned long LFHPIMeasurement::GetNumberOfHPICoils()
+int32_t LFHPIMeasurement::GetNumberOfHPICoils()
 {
     return m_NumberOfHPICoils;
 }
 
-unsigned long LFHPIMeasurement::GetFirstSample()
+int32_t LFHPIMeasurement::GetFirstSample()
 {
     return m_FirstSample;
 }
 
-unsigned long LFHPIMeasurement::GetLastSample()
+int32_t LFHPIMeasurement::GetLastSample()
 {
     return m_LastSample;
 }
 
-void LFHPIMeasurement::SetSamplingFrequency(unsigned long src)
+LFHPICoil& LFHPIMeasurement::GetLFHPICoil()
 {
-    m_SamplingFrequency=src;
+    return m_LFHPICoil;
 }
 
-void LFHPIMeasurement::SetNumberOfChannels(unsigned long src)
+LFIsotrak& LFHPIMeasurement::GetLFIsotrak()
 {
-    m_NumberOfChannels=src;
-}
-void LFHPIMeasurement::SetNumberOfAverages(unsigned long src)
-{
-    m_NumberOfAverages=src;
+    return m_LFIsotrak;
 }
 
-void LFHPIMeasurement::SetNumberOfHPICoils(unsigned long src)
+void LFHPIMeasurement::SetSamplingFrequency( const int32_t src )
 {
-    m_NumberOfHPICoils=src;
+    m_SamplingFrequency = src;
 }
 
-void LFHPIMeasurement::SetFirstSample(unsigned long src)
+void LFHPIMeasurement::SetNumberOfChannels( const int32_t src )
 {
-    m_FirstSample=src;
+    m_NumberOfChannels = src;
 }
 
-void LFHPIMeasurement::SetLastSample(unsigned long src)
+void LFHPIMeasurement::SetNumberOfAverages( const int32_t src )
 {
-    m_LastSample=src;
+    m_NumberOfAverages = src;
+}
+
+void LFHPIMeasurement::SetNumberOfHPICoils( const int32_t src )
+{
+    m_NumberOfHPICoils = src;
+}
+
+void LFHPIMeasurement::SetFirstSample( const int32_t src )
+{
+    m_FirstSample = src;
+}
+
+void LFHPIMeasurement::SetLastSample( const int32_t src )
+{
+    m_LastSample = src;
 }

@@ -1,62 +1,60 @@
 #ifndef LFSUBJECT_H
 #define LFSUBJECT_H
 
-///Subject block
+#include <inttypes.h>
+#include<string>
+using namespace std;
+
+///Subject block (106)
 class LFSubject
 {
 protected:
-    string m_HIS_ID;///>HIS ID
-    string m_LastName;///>Last Name
-    string m_FirstName;///>First Name
-    string m_MiddleName;///>Middle Name
-    unsigned long m_Birthday;///>Geburtsdatum
-    //enum m_Sex
-    //enum m_Hand
-    float m_Weight;///>Körpergewicht
-    float m_Height;///>Körpergröße
-    string m_Comment;///>Kommentar
+    string m_HIS_ID;///<HIS ID (410) ID used in the Hospital Information System
+    string m_LastName;///<Last Name (403)
+    string m_FirstName;///<First Name (401)
+    string m_MiddleName;///<Middle Name (402)
+    int32_t m_Birthday;///<Birthdate (404)
+    //enum m_Sex (405)
+    //enum m_Hand (406)
+    float m_Weight;///<Body weight, kg (407)
+    float m_Height;///<Body height, m (408)
+    string m_Comment;///<Comment (409)
 public:
-    ///Gibt HIS ID zurück
-    const char* GetHIS_ID();
-    ///Gibt HIS ID Länge zurück
-    unsigned long GetHIS_IDLength();
-    ///Gibt Last Name zurück
-    const char* GetLastName();
-    ///Gibt Last Name Länge zurück
-    unsigned long GetLastNameLength();
-   ///Gibt First Name zurück
-    const char* GetFirstName();
-    ///Gibt First Name Länge zurück
-    unsigned long GetFirstNameLength();
-   ///Gibt Middle Name zurück
-    const char* GetMiddleName();
-    ///Gibt Middle Name Länge zurück
-    unsigned long GetMiddleNameLength();
-    ///Gibt das Geburtsdatum zurück
-    unsigned long GetBirthday();
-    ///Gibt das Körpergewicht zurück
+    ///Constructor
+    LFSubject();
+    ///Sets all member variables to defaults
+    void Init();
+    ///Returns the HIS ID
+    string& GetHIS_ID();
+    ///Returns the Last Name
+    string& GetLastName();
+    ///Returns the First Name
+    string& GetFirstName();
+    ///Returns the Middle Name
+    string& GetMiddleName();
+    ///Returns the Birthdate
+    int32_t GetBirthday();
+    ///Returns the body weight
     float GetWeight();
-    ///Gibt die Körpergröße zurück
+    ///Returns the body height
     float GetHeight();
-    ///Gibt den Kommentar zurück
-    const char* GetComment();
-    ///Gibt die Länge des Kommentars zurück
-    unsigned long GetCommentLength();
-  ///Setzt HIS ID
+    ///Returns the comment
+    string& GetComment();
+    ///Sets the HIS ID
     void SetHIS_ID( const char* src );
-    ///Setzt den Last Name
+    ///Sets the den Last Name
     void SetLastName( const char* src );
-    ///Setzt den First Name
+    ///Sets the First Name
     void SetFirstName( const char* src );
-    ///Setzt den Middle Name
+    ///Sets the Middle Name
     void SetMiddleName( const char* src );
-    ///Setzt das Geburtsdatum
-    void SetBirthday(unsigned long src);
-    ///Setzt das Körpergewicht
-    void SetWeight( float src );
-    ///Setzt die Körpergröße
-    void SetHeight( float src );
-    ///Setzt den Kommentar
+    ///Sets the Birthdate
+    void SetBirthday( const int32_t src );
+    ///Sets the body weight
+    void SetWeight( const float src );
+    ///Sets the body height
+    void SetHeight( const float src );
+    ///Sets the Comment
     void SetComment( const char* src );
 };
 

@@ -3,13 +3,7 @@
 //#include <raw_info.h>
 //#include "libfiffio.h"
 //#include </usr/include/c++/4.4/string>
-#include <string>
-using namespace std;
 
-#include "LFSubject.h"
-#include "LFMeasurementInfo.h"
-#include "LFMeasurement.h"
-#include "LFData.h"
 #include "LFInterface.h"
 //int testlibfunction( const char* a );
 

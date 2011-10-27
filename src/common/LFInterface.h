@@ -1,12 +1,14 @@
-#ifndef IFACE_H
-#define IFACE_H
+#ifndef LFINTERFACE_H
+#define LFINTERFACE_H
+
+#include "LFData.h"
 
 ///Interface
 class LFInterface
 {
 public:
-    ///Liest die fiff - Datei und gibt das LFFiffData - Objekt zurück
-    static int fiffRead(LFData& output, const char* path);
+    ///Reads the fiff - file and returns the LFFiffData - Object
+    static int fiffRead( LFData& output, const char* path );
 };
 
 #endif

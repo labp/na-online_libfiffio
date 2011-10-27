@@ -1,49 +1,47 @@
-#include <string>
-using std::string;
-
+#include <float.h>
 #include "LFSubject.h"
 
-const char* LFSubject::GetHIS_ID()
+LFSubject::LFSubject() :
+    m_Birthday( -1 ), m_Weight( -FLT_MAX ), m_Height( -FLT_MAX )
+{
+
+}
+
+void LFSubject::Init()
+{
+    m_HIS_ID.clear();
+    m_LastName.clear();
+    m_FirstName.clear();
+    m_MiddleName.clear();
+    m_Birthday = -1;
+    //m_Sex
+    //m_Hand
+    m_Weight = -FLT_MAX;
+    m_Height = -FLT_MAX;
+    m_Comment.clear();
+}
+
+string& LFSubject::GetHIS_ID()
 {
     return m_HIS_ID;
 }
 
-unsigned long LFSubject::GetHIS_IDLength()
-{
-    return m_HIS_ID.length();
-}
-
-const char* LFSubject::GetLastName()
+string& LFSubject::GetLastName()
 {
     return m_LastName;
 }
 
-unsigned long LFSubject::GetLastNameLength()
-{
-    return m_LastName.length();
-}
-
-const char* LFSubject::GetFirstName()
+string& LFSubject::GetFirstName()
 {
     return m_FirstName;
 }
 
-unsigned long LFSubject::GetFirstNameLength()
-{
-    return m_FirstName.length();
-}
-
-const char* LFSubject::GetMiddleName()
+string& LFSubject::GetMiddleName()
 {
     return m_MiddleName;
 }
 
-unsigned long LFSubject::GetMiddleNameLength()
-{
-    return m_MiddleName.length();
-}
-
-unsigned long LFSubject::GetBirthday()
+int32_t LFSubject::GetBirthday()
 {
     return m_Birthday;
 }
@@ -58,7 +56,7 @@ float LFSubject::GetHeight()
     return m_Height;
 }
 
-const char* LFSubject::GetComment()
+string& LFSubject::GetComment()
 {
     return m_Comment;
 }
@@ -83,22 +81,17 @@ void LFSubject::SetMiddleName( const char* src )
     m_MiddleName = src;
 }
 
-void LFSubject::SetBirthday( unsigned long src )
+void LFSubject::SetBirthday( const int32_t src )
 {
     m_Birthday = src;
 }
 
-unsigned long LFSubject::GetCommentLength()
-{
-    return m_Comment.length();
-}
-
-void LFSubject::SetWeight( float src )
+void LFSubject::SetWeight( const float src )
 {
     m_Weight = src;
 }
 
-void LFSubject::SetHeight( float src )
+void LFSubject::SetHeight( const float src )
 {
     m_Height = src;
 }

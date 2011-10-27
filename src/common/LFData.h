@@ -1,13 +1,21 @@
-#ifndef LFFIFFDATA_H
-#define LFFIFFDATA_H
+#ifndef LFDATA_H
+#define LFDATA_H
 
-///FIFF - Daten
+#include "LFMeasurement.h"
+
+///FIFF - Data
 class LFData
 {
 protected:
-    LFMeasurement m_LFMeasurement;///>Measurement block
+    LFMeasurement m_LFMeasurement;///<Measurement block (100)
 public:
-    ///Gibt Measurement Block zurück
+    ///Constructor
+    LFData();
+    ///Destructor
+    ~LFData();
+    ///Sets all member variables to defaults
+    void Init();
+    ///Returns the Measurement Block
     LFMeasurement& GetLFMeasurement();
 };
 
