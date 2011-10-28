@@ -20,10 +20,10 @@ public:
     };
 protected:
     string m_Description;///<Description (206)
-    proj_item m_Kind;///<Type of projection definition (3411)
-    int32_t m_NumberOfChannels;///<Number of Channels (200)
+    proj_item m_Kind;///<Type of projection definition, default == pi_none (3411)
+    int32_t m_NumberOfChannels;///<Number of Channels, default == -1 (200)
     string m_ChannelNameList;///<Names of the channels of the projection vectors (3417)
-    float m_Time;///<s. time of the field sample (3412)
+    float m_Time;///<s. time of the field sample, default == -FLT_MAX (3412)
     //int32_t m_NumberOfProjectionVectors;///<Number of projection vectors (3414)
     LFArrayFloat2d m_ProjectionVectors;///<Projection Vectors (3415)
 public:

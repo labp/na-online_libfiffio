@@ -9,8 +9,8 @@
 class LFDigitisationPoint
 {
 protected:
-    int32_t m_Kind;///<What kind of points these are
-    int32_t m_Ident;///<Running number for this point set
+    int32_t m_Kind;///<What kind of points these are, default == -1
+    int32_t m_Ident;///<Running number for this point set, default == -1
     LFArrayFloat3d m_Rr;///<Locations of points in meters (float[3][n])
 public:
     ///Constructor

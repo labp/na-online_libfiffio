@@ -9,7 +9,7 @@
 class LFSSP
 {
 protected:
-    int32_t m_NumberOfChannels;///<Number Of Channels (200)
+    int32_t m_NumberOfChannels;///<Number Of Channels, default == -1 (200)
     LFProjectionItem m_LFProjectionItem;///<Projection Item block (314)
 public:
     ///Constructor

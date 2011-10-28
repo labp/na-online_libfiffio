@@ -8,12 +8,12 @@ using namespace std;
 class LFCoordTrans
 {
 protected:
-    int32_t m_From;///<The source coordinate frame
-    int32_t m_To;///<The destination coordinate frame
-    float m_Rot[3][3];///<Rotation matrix between the coordinate frames
-    float m_Move[3];///<Location of the source coordinate system origin in destination coordinates
-    float m_InvRot[3][3];///<Inverse rotation matrix between the coordinate frames
-    float m_InvMove[3];///<Location of the destination coordinate system origin in source coordinates
+    int32_t m_From;///<The source coordinate frame, default == -1
+    int32_t m_To;///<The destination coordinate frame, default == -1
+    float m_Rot[3][3];///<Rotation matrix between the coordinate frames, default == 0
+    float m_Move[3];///<Location of the source coordinate system origin in destination coordinates, default == 0
+    float m_InvRot[3][3];///<Inverse rotation matrix between the coordinate frames, default == 0
+    float m_InvMove[3];///<Location of the destination coordinate system origin in source coordinates, default == 0
 public:
     ///Constructor
     LFCoordTrans();

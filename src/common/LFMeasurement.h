@@ -31,7 +31,7 @@ public:
 protected:
     LFMeasurementInfo m_LFMeasurementInfo;///<Measurement-Info block (101)
     LFRawData m_LFRawData;///<Raw Data block (102)
-    coord_t m_BemCoordinateFrame;///<The coordinate frame of the model (3112)
+    coord_t m_BemCoordinateFrame;///<The coordinate frame of the model, default == c_unknown (3112)
     LFCoordTrans m_LFCoordTrans;///<Coordinate transformations
     LFBemSurface m_LFBemSurface;///<BEM surface (311)
     LFArrayFloat2d m_BemSolutionMatrix;///<The solution matrix (3110)

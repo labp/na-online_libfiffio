@@ -8,10 +8,10 @@ using namespace std;
 class LFChannelInfo
 {
 protected:
-    int32_t m_ScanNo;///<Position of this channel in scanning order
-    int32_t m_LogNo;///<Logical channel number. These must be unique within channels of the same kind
-    int32_t m_Kind;///<Kind of the channel described (MEG, EEG, EOG, etc.)
-    float m_Range;///<The raw data values must be multiplied by this to get into volts at the electronics output
+    int32_t m_ScanNo;///<Position of this channel in scanning order, default == -1
+    int32_t m_LogNo;///<Logical channel number. These must be unique within channels of the same kind, default ==-1
+    int32_t m_Kind;///<Kind of the channel described (MEG, EEG, EOG, etc.), default == -1
+    float m_Range;///<The raw data values must be multiplied by this to get into volts at the electronics output, default == -FLT_MAX
 public:
     ///Constructor
     LFChannelInfo();

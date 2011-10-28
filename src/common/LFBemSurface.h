@@ -27,10 +27,10 @@ public:
         ,bs_vv = 23///<VectorView sensor array
     };
 protected:
-    bem_surf_id_t m_SurfaceId;///<Surface type (bem_surf_id) (3101)
-    float m_BemSigma;///<Conductivity of a compartment, S/m (3113)
-    int32_t m_NumberOfNodes;///<Number of nodes on a surface (3103)
-    int32_t m_NumberOfTriangles;///<Number of triangles on a surface (3104)
+    bem_surf_id_t m_SurfaceId;///<Surface type (bem_surf_id), default == bs_unknown2 (3101)
+    float m_BemSigma;///<Conductivity of a compartment, S/m, default == -FLT_MAX (3113)
+    int32_t m_NumberOfNodes;///<Number of nodes on a surface, default == -1 (3103)
+    int32_t m_NumberOfTriangles;///<Number of triangles on a surface, default == -1 (3104)
     LFArrayFloat3d m_BemSurfaceNodes;///<Surface nodes, matrix with 3* 'Number of nodes' elements (3105)
     LFArrayFloat3d m_BemSurfaceNormals;///<Vertex normal unit vectors, matrix with 3* 'Number of nodes' elements (3107)
     vector<int32_t> m_BemSurfaceTriangles;///<Surface triangles, matrix with 3* 'Number of triangles' elements (3106)

@@ -17,9 +17,9 @@ public:
         dt_float///<float
     };
 protected:
-    datatype_t m_DataType;///<Type of the data in the buffer
-    size_t m_Bytes;///<Length of the buffer in bytes
-    void* m_Buffer;///<Pointer to vector
+    datatype_t m_DataType;///<Type of the data in the buffer, default == dt_unknown
+    size_t m_Bytes;///<Length of the buffer in bytes, default == 0
+    void* m_Buffer;///<Pointer to vector, default == NULL
 public:
     LFDataBuffer();
     ~LFDataBuffer();

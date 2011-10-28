@@ -10,12 +10,12 @@
 class LFHPIMeasurement
 {
 protected:
-    float m_SamplingFrequency;///<Sampling Frequency, Hz (201)
-    int32_t m_NumberOfChannels;///<Number of Channels (200)
-    int32_t m_NumberOfAverages;///<Number of Averages (207)
-    int32_t m_NumberOfHPICoils;///<Number of HPI Coils (216)
-    int32_t m_FirstSample;///<First Sample of Epoch (208)
-    int32_t m_LastSample;///<Last Sample of Epoch (209)
+    float m_SamplingFrequency;///<Sampling Frequency, Hz, default == -FLT_MAX (201)
+    int32_t m_NumberOfChannels;///<Number of Channels, default == -1 (200)
+    int32_t m_NumberOfAverages;///<Number of Averages, default == -1 (207)
+    int32_t m_NumberOfHPICoils;///<Number of HPI Coils, default == -1 (216)
+    int32_t m_FirstSample;///<First Sample of Epoch, default == -1 (208)
+    int32_t m_LastSample;///<Last Sample of Epoch, default == -1 (209)
     LFHPICoil m_LFHPICoil;///<HPI Coil block (110)
     LFIsotrak m_LFIsotrak;///<Isotrak block (107)
 public:

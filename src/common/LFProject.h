@@ -9,7 +9,7 @@ using namespace std;
 class LFProject
 {
 protected:
-    int32_t m_Id;///<Project ID (500)
+    int32_t m_Id;///<Project ID, default == -1 (500)
     string m_Name;///<Project name (501)
     string m_Comment;///<Project description (504)
 public:

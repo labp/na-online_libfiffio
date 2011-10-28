@@ -9,11 +9,11 @@
 class LFHPICoil
 {
 protected:
-    int32_t m_CoilNumber;///<Coil Number (245)
+    int32_t m_CoilNumber;///<Coil Number, default == -1 (245)
     LFArrayFloat2d m_Epoch;///<Buffer containing one Epoch and channel (302)
     vector< float > m_Slopes;///<Slopes, T, T/m (215)
     vector< float > m_CorrelationCoefficient;///<Correlation Coefficient (226)
-    float m_CoilFrequency;///<Hz range (236)
+    float m_CoilFrequency;///<Hz range, default == -FLT_MAX (236)
 public:
     ///Constructor
     LFHPICoil();

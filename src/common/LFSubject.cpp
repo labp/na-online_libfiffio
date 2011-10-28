@@ -51,6 +51,16 @@ float LFSubject::GetWeight()
     return m_Weight;
 }
 
+LFSubject::sex_t LFSubject::GetSex()
+{
+    return m_Sex;
+}
+
+LFSubject::hand_t LFSubject::GetHand()
+{
+    return m_Hand;
+}
+
 float LFSubject::GetHeight()
 {
     return m_Height;
@@ -84,6 +94,16 @@ void LFSubject::SetMiddleName( const char* src )
 void LFSubject::SetBirthday( const int32_t src )
 {
     m_Birthday = src;
+}
+
+void LFSubject::SetSex( const LFSubject::sex_t src )
+{
+    m_Sex = src;
+}
+
+void LFSubject::SetHand( const LFSubject::hand_t src )
+{
+    m_Hand = src;
 }
 
 void LFSubject::SetWeight( const float src )
