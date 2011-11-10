@@ -4,7 +4,9 @@
 #include <vector>
 using namespace std;
 
-///2D Array of floats
+/**
+ * 2D Array of floats
+ */
 class LFArrayFloat2d: public vector< float >
 {
 public:
