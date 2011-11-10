@@ -6,7 +6,9 @@ using namespace std;
 
 #include "LFArrayFloat3d.h"
 
-///BEM surface (311)
+/**
+ * BEM surface (311)
+ */
 class LFBemSurface
 {
 public:
@@ -35,31 +37,57 @@ protected:
     LFArrayFloat3d m_BemSurfaceNormals;///<Vertex normal unit vectors, matrix with 3* 'Number of nodes' elements (3107)
     vector<int32_t> m_BemSurfaceTriangles;///<Surface triangles, matrix with 3* 'Number of triangles' elements (3106)
 public:
-    ///Constructor
+    /**
+     * Constructor
+     */
     LFBemSurface();
-    ///Sets all member variables to defaults
+    /**
+     * Sets all member variables to defaults
+     */
     void Init();
-    ///Returns the surface type
+    /**
+     * Returns the surface type
+     */
     bem_surf_id_t GetSurfaceId();
-    ///Returns the conductivity of a compartment
+    /**
+     * Returns the conductivity of a compartment
+     */
     float GetBemSigma();
-    ///Returns the number of nodes on a surface
+    /**
+     * Returns the number of nodes on a surface
+     */
     int32_t GetNumberOfNodes();
-    ///Returns the number of triangles on a surface
+    /**
+     * Returns the number of triangles on a surface
+     */
     int32_t GetNumberOfTriangles();
-    ///Returns surface nodes, matrix with 3*'Number of nodes' elements
+    /**
+     * Returns surface nodes, matrix with 3*'Number of nodes' elements
+     */
     LFArrayFloat3d& GetBemSurfaceNodes();
-    ///Returns vertex normal unit vectors, matrix with 3*'Number of nodes' elements
+    /**
+     * Returns vertex normal unit vectors, matrix with 3*'Number of nodes' elements
+     */
     LFArrayFloat3d& GetBemSurfaceNormals();
-    ///Returns surface triangles, matrix with 3*'Number of triangles' elements
+    /**
+     * Returns surface triangles, matrix with 3*'Number of triangles' elements
+     */
     vector<int32_t>& GetBemSurfaceTriangles();
-    ///Sets the surface type
+    /**
+     * Sets the surface type
+     */
     void SetSurfaceId(const bem_surf_id_t src);
-    ///Sets the conductivity of a compartment
+    /**
+     * Sets the conductivity of a compartment
+     */
     void SetBemSigma(const float src);
-    ///Sets the number of nodes on a surface
+    /**
+     * Sets the number of nodes on a surface
+     */
     void SetNumberOfNodes(const int32_t src);
-    ///Sets the number of triangles on a surface
+    /**
+     * Sets the number of triangles on a surface
+     */
     void SetNumberOfTriangles(const int32_t src);
 };
 

@@ -3,11 +3,15 @@
 
 #include "LFData.h"
 
-///Interface
+/**
+ * Interface
+ */
 class LFInterface
 {
 public:
-    ///Reads the fiff - file and returns the LFFiffData - Object
+    /**
+     * Reads the fiff - file and returns the LFFiffData - Object
+     */
     static int fiffRead( LFData& output, const char* path );
 };
 

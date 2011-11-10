@@ -5,7 +5,9 @@
 #include <inttypes.h>
 #include "LFArrayFloat2d.h"
 
-///Projection Item block (314)
+/**
+ * Projection Item block (314)
+ */
 class LFProjectionItem
 {
 public:
@@ -27,35 +29,65 @@ protected:
     //int32_t m_NumberOfProjectionVectors;///<Number of projection vectors (3414)
     LFArrayFloat2d m_ProjectionVectors;///<Projection Vectors (3415)
 public:
-    ///Constructor
+    /**
+     * Constructor
+     */
     LFProjectionItem();
-    ///Sets all member variables to defaults
+    /**
+     * Sets all member variables to defaults
+     */
     void Init();
-    ///Returns Description
+    /**
+     * Returns Description
+     */
     string& GetDescription();
-    ///Returns the type of projection definition
+    /**
+     * Returns the type of projection definition
+     */
     proj_item GetKind();
-    ///Returns Number of Channels
+    /**
+     * Returns Number of Channels
+     */
     int32_t GetNumberOfChannels();
-    ///Returns Channel Name List
+    /**
+     * Returns Channel Name List
+     */
     string& GetChannelNameList();
-    ///Returns the time of the field sample
+    /**
+     * Returns the time of the field sample
+     */
     float GetTime();
-    ///Returns the number of projection vectors
+    /**
+     * Returns the number of projection vectors
+     */
     int32_t GetNumberOfProjectionVectors();
-    ///Returns projection vectors
+    /**
+     * Returns projection vectors
+     */
     LFArrayFloat2d& GetProjectionVectors();
-    ///Sets Description
+    /**
+     * Sets Description
+     */
     void SetDescription( const char* src );
-    ///Sets the type of projection definition
+    /**
+     * Sets the type of projection definition
+     */
     void SetKind( const proj_item src );
-    ///Sets Number of Channels
+    /**
+     * Sets Number of Channels
+     */
     void SetNumberOfChannels( const int32_t src );
-    ///Sets Channel Name List
+    /**
+     * Sets Channel Name List
+     */
     void SetChannelNameList( const char* src );
-    ///Sets the time of the field sample
+    /**
+     * Sets the time of the field sample
+     */
     void SetTime( const float src );
-    ///Sets the number of projection vectors
+    /**
+     * Sets the number of projection vectors
+     */
     //void SetNumberOfProjectionVectors(int32_t src);
 };
 

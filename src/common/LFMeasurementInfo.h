@@ -14,7 +14,9 @@ using namespace std;
 #include "LFChannelInfo.h"
 #include "LFHPISubsystem.h"
 
-///Measurement-Info block (101)
+/**
+ * Measurement-Info block (101)
+ */
 class LFMeasurementInfo
 {
 protected:
@@ -35,55 +37,105 @@ protected:
     vector< int32_t > m_BadChannels;///<List of bad channels (220)
     LFHPISubsystem m_LFHPISubsystem;///<HPI Subsystem block (121)
 public:
-    ///Constructor
+    /**
+     * Constructor
+     */
     LFMeasurementInfo();
-    ///Sets all member variables to defaults
+    /**
+     * Sets all member variables to defaults
+     */
     void Init();
-    ///Returns Subject block
+    /**
+     * Returns Subject block
+     */
     LFSubject& GetLFSubject();
-    ///Returns Project block
+    /**
+     * Returns Project block
+     */
     LFProject& GetLFProject();
-    ///Returns HPI Measurement block
+    /**
+     * Returns HPI Measurement block
+     */
     LFHPIMeasurement& GetLFHPIMeasurement();
-    ///Returns SSP block
+    /**
+     * Returns SSP block
+     */
     LFSSP& GetLFSSP();
-    ///Returns Events block
+    /**
+     * Returns Events block
+     */
     LFEvents& GetLFEvents();
-    ///Returns Data Acquisition Parameters block
+    /**
+     * Returns Data Acquisition Parameters block
+     */
     LFDataAcquisitionParameters& GetLFDataAcquisitionParameters();
-    ///Returns the Number of Channels
+    /**
+     * Returns the Number of Channels
+     */
     int32_t GetNumberOfChannels();
-    ///Returns the Sampling Frequency
+    /**
+     * Returns the Sampling Frequency
+     */
     float GetSamplingFrequency();
-    ///Returns the analog lowpass
+    /**
+     * Returns the analog lowpass
+     */
     float GetLowpass();
-    ///Returns the analog highpass
+    /**
+     * Returns the analog highpass
+     */
     float GetHighpass();
-    ///Returns the information about how the raw data is packed
+    /**
+     * Returns the information about how the raw data is packed
+     */
     int32_t GetDataPack();
-    ///Returns the basic line interference frequency
+    /**
+     * Returns the basic line interference frequency
+     */
     float GetLineFreq();
-    ///Returns the tilt angle of the dewar in degrees
+    /**
+     * Returns the tilt angle of the dewar in degrees
+     */
     int32_t GetGantryAngle();
-    ///Returns the channel descriptor
+    /**
+     * Returns the channel descriptor
+     */
     LFChannelInfo& GetLFChannelInfo();
-    ///Returns the list of bad channels
+    /**
+     * Returns the list of bad channels
+     */
     vector< int32_t >& GetBadChannels();
-    ///Returns the HPI Subsystem block
+    /**
+     * Returns the HPI Subsystem block
+     */
     LFHPISubsystem& GetLFHPISubsystem();
-    ///Sets the Number of Channels
+    /**
+     * Sets the Number of Channels
+     */
     void SetNumberOfChannels( const int32_t src );
-    ///Sets the Sampling Frequency
+    /**
+     * Sets the Sampling Frequency
+     */
     void SetSamplingFrequency( const float src );
-    ///Sets the analog lowpass
+    /**
+     * Sets the analog lowpass
+     */
     void SetLowpass( const float src );
-    ///Sets the analog highpass
+    /**
+     * Sets the analog highpass
+     */
     void SetHighpass( const float src );
-    ///Sets the information about how the raw data is packed
+    /**
+     * Sets the information about how the raw data is packed
+     */
     void SetDataPack( const int32_t src );
-    ///Sets the basic line interference frequency
+    /**
+     * Sets the basic line interference frequency
+     */
     void SetLineFreq( const float src );
-    ///Sets the tilt angle of the dewar in degrees
+    /**
+     * Sets the tilt angle of the dewar in degrees
+     */
     void SetGantryAngle( const int32_t src );
 };
 

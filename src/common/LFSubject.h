@@ -5,7 +5,9 @@
 #include<string>
 using namespace std;
 
-///Subject block (106)
+/**
+ * Subject block (106)
+ */
 class LFSubject
 {
 public:
@@ -33,49 +35,93 @@ protected:
     float m_Height;///<Body height, m, default == -FLT_MAX (408)
     string m_Comment;///<Comment (409)
 public:
-    ///Constructor
+    /**
+     * Constructor
+     */
     LFSubject();
-    ///Sets all member variables to defaults
+    /**
+     * Sets all member variables to defaults
+     */
     void Init();
-    ///Returns the HIS ID
+    /**
+     * Returns the HIS ID
+     */
     string& GetHIS_ID();
-    ///Returns the Last Name
+    /**
+     * Returns the Last Name
+     */
     string& GetLastName();
-    ///Returns the First Name
+    /**
+     * Returns the First Name
+     */
     string& GetFirstName();
-    ///Returns the Middle Name
+    /**
+     * Returns the Middle Name
+     */
     string& GetMiddleName();
-    ///Returns the Birthdate
+    /**
+     * Returns the Birthdate
+     */
     int32_t GetBirthday();
-    ///Returns patient's sex
+    /**
+     * Returns patient's sex
+     */
     sex_t GetSex();
-    ///Right- or left-handed patient
+    /**
+     * Right- or left-handed patient
+     */
     hand_t GetHand();
-    ///Returns the body weight
+    /**
+     * Returns the body weight
+     */
     float GetWeight();
-    ///Returns the body height
+    /**
+     * Returns the body height
+     */
     float GetHeight();
-    ///Returns the comment
+    /**
+     * Returns the comment
+     */
     string& GetComment();
-    ///Sets the HIS ID
+    /**
+     * Sets the HIS ID
+     */
     void SetHIS_ID( const char* src );
-    ///Sets the den Last Name
+    /**
+     * Sets the den Last Name
+     */
     void SetLastName( const char* src );
-    ///Sets the First Name
+    /**
+     * Sets the First Name
+     */
     void SetFirstName( const char* src );
-    ///Sets the Middle Name
+    /**
+     * Sets the Middle Name
+     */
     void SetMiddleName( const char* src );
-    ///Sets the Birthdate
+    /**
+     * Sets the Birthdate
+     */
     void SetBirthday( const int32_t src );
-    ///Sets patient's sex
+    /**
+     * Sets patient's sex
+     */
     void SetSex( const sex_t src );
-    ///Sets right- or left-handed patient
+    /**
+     * Sets right- or left-handed patient
+     */
     void SetHand( const hand_t src );
-    ///Sets the body weight
+    /**
+     * Sets the body weight
+     */
     void SetWeight( const float src );
-    ///Sets the body height
+    /**
+     * Sets the body height
+     */
     void SetHeight( const float src );
-    ///Sets the Comment
+    /**
+     * Sets the Comment
+     */
     void SetComment( const char* src );
 };
 

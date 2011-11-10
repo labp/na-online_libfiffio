@@ -6,7 +6,9 @@
 #include "LFHPICoil.h"
 #include "LFIsotrak.h"
 
-///HPI Measurement block (108)
+/**
+ * HPI Measurement block (108)
+ */
 class LFHPIMeasurement
 {
 protected:
@@ -19,37 +21,69 @@ protected:
     LFArrayPtr<LFHPICoil> m_LFHPICoil;///<HPI Coil block (110)
     LFIsotrak m_LFIsotrak;///<Isotrak block (107)
 public:
-    ///Constructor
+    /**
+     * Constructor
+     */
     LFHPIMeasurement();
-    ///Sets all member variables to defaults
+    /**
+     * Sets all member variables to defaults
+     */
     void Init();
-    ///Returns the Sampling Frequency
+    /**
+     * Returns the Sampling Frequency
+     */
     float GetSamplingFrequency();
-    ///Returns the Number of Channels
+    /**
+     * Returns the Number of Channels
+     */
     int32_t GetNumberOfChannels();
-    ///Returns the Number of Averages
+    /**
+     * Returns the Number of Averages
+     */
     int32_t GetNumberOfAverages();
-    ///Returns the Number of HPI Coils
+    /**
+     * Returns the Number of HPI Coils
+     */
     int32_t GetNumberOfHPICoils();
-    ///Returns the First Sample
+    /**
+     * Returns the First Sample
+     */
     int32_t GetFirstSample();
-    ///Returns the Last Sample
+    /**
+     * Returns the Last Sample
+     */
     int32_t GetLastSample();
-    ///Returns the HPI Coil block
+    /**
+     * Returns the HPI Coil block
+     */
     LFArrayPtr<LFHPICoil>& GetLFHPICoil();
-    ///Returns the Isotrak block
+    /**
+     * Returns the Isotrak block
+     */
     LFIsotrak& GetLFIsotrak();
-    ///Sets the Sampling Frequency
+    /**
+     * Sets the Sampling Frequency
+     */
     void SetSamplingFrequency( const float src );
-    ///Sets the Number of Channels
+    /**
+     * Sets the Number of Channels
+     */
     void SetNumberOfChannels( const int32_t src );
-    ///Sets the Number of Averages
+    /**
+     * Sets the Number of Averages
+     */
     void SetNumberOfAverages( const int32_t src );
-    ///Sets the Number of HPI Coils
+    /**
+     * Sets the Number of HPI Coils
+     */
     void SetNumberOfHPICoils( const int32_t src );
-    ///Sets the First Sample
+    /**
+     * Sets the First Sample
+     */
     void SetFirstSample( const int32_t src );
-    ///Sets the Last Sample
+    /**
+     * Sets the Last Sample
+     */
     void SetLastSample( const int32_t src );
 };
 

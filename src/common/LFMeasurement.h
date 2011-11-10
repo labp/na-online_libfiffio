@@ -7,7 +7,9 @@
 #include "LFBemSurface.h"
 #include "LFArrayFloat2d.h"
 
-///Measurement block
+/**
+ * Measurement block
+ */
 class LFMeasurement
 {
 public:
@@ -36,25 +38,45 @@ protected:
     LFBemSurface m_LFBemSurface;///<BEM surface (311)
     LFArrayFloat2d m_BemSolutionMatrix;///<The solution matrix (3110)
 public:
-    ///Constructor
+    /**
+     * Constructor
+     */
     LFMeasurement();
-    ///Destructor
+    /**
+     * Destructor
+     */
     ~LFMeasurement();
-    ///Sets all member variables to defaults
+    /**
+     * Sets all member variables to defaults
+     */
     void Init();
-    ///Returns the Measurement-Info block (101)
+    /**
+     * Returns the Measurement-Info block (101)
+     */
     LFMeasurementInfo& GetLFMeasurementInfo();
-    ///Returns the Raw Data block (102)
+    /**
+     * Returns the Raw Data block (102)
+     */
     LFRawData& GetLFRawData();
-    ///Returns the coordinate frame of the model (3112)
+    /**
+     * Returns the coordinate frame of the model (3112)
+     */
     coord_t GetBemCoordinateFrame();
-    ///Returns coordinate transformations
+    /**
+     * Returns coordinate transformations
+     */
     LFCoordTrans& GetLFCoordTrans();
-    ///Returns BEM surface
+    /**
+     * Returns BEM surface
+     */
     LFBemSurface& GetLFBemSurface();
-    ///Returns the solution matrix
+    /**
+     * Returns the solution matrix
+     */
     LFArrayFloat2d& GetBemSolutionMatrix();
-    ///Sets the coordinate frame of the model (3112)
+    /**
+     * Sets the coordinate frame of the model (3112)
+     */
     void SetBemCoordinateFrame( const coord_t src );
 };
 

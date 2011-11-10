@@ -3,19 +3,29 @@
 
 #include "LFMeasurement.h"
 
-///FIFF - Data
+/**
+ * FIFF - Data
+ */
 class LFData
 {
 protected:
     LFMeasurement m_LFMeasurement;///<Measurement block (100)
 public:
-    ///Constructor
+    /**
+     * Constructor
+     */
     LFData();
-    ///Destructor
+    /**
+     * Destructor
+     */
     ~LFData();
-    ///Sets all member variables to defaults
+    /**
+     * Sets all member variables to defaults
+     */
     void Init();
-    ///Returns the Measurement Block
+    /**
+     * Returns the Measurement Block
+     */
     LFMeasurement& GetLFMeasurement();
 };
 

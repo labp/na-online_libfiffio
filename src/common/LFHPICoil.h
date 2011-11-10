@@ -6,7 +6,9 @@
 #include "LFArrayPtr.h"
 #include "LFArrayFloat2d.h"
 
-///HPI Coil block (110)
+/**
+ * HPI Coil block (110)
+ */
 class LFHPICoil
 {
 protected:
@@ -16,23 +18,41 @@ protected:
     vector< float > m_CorrelationCoefficient;///<Correlation Coefficient (226)
     float m_CoilFrequency;///<Hz range, default == -FLT_MAX (236)
 public:
-    ///Constructor
+    /**
+     * Constructor
+     */
     LFHPICoil();
-    ///Sets all member variables to defaults
+    /**
+     * Sets all member variables to defaults
+     */
     void Init();
-    ///Returns the Coil Number
+    /**
+     * Returns the Coil Number
+     */
     int32_t GetCoilNumber();
-    ///Returns the Liste der Epochen
+    /**
+     * Returns the Liste der Epochen
+     */
     LFArrayFloat2d& GetEpoch();
-    ///Returns the Slopes
+    /**
+     * Returns the Slopes
+     */
     vector< float >& GetSlopes();
-    ///Returns the Correlation Coefficient
+    /**
+     * Returns the Correlation Coefficient
+     */
     vector< float >& GetCorrelationCoefficient();
-    ///Returns the Hz range
+    /**
+     * Returns the Hz range
+     */
     float GetCoilFrequency();
-    ///Sets the Coil Number
+    /**
+     * Sets the Coil Number
+     */
     void SetCoilNumber( const int32_t src );
-    ///Sets Hz range
+    /**
+     * Sets Hz range
+     */
     void SetCoilFrequency( const float src );
 };
 #endif
