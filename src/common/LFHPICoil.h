@@ -3,6 +3,7 @@
 
 #include <inttypes.h>
 
+#include "LFArrayPtr.h"
 #include "LFArrayFloat2d.h"
 
 ///HPI Coil block (110)

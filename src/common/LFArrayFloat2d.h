@@ -15,6 +15,6 @@ public:
     ///Creates the Array nBytes long
     void AllocateBytes( size_t nBytes );
     ///Returns the Pointer to the Element, or NULL if don't exists
-    float* GetElement( size_t index );
+    float* GetElement( size_t index = 0 );
 };
 #endif

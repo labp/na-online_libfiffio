@@ -16,7 +16,7 @@ protected:
     int32_t m_NumberOfHPICoils;///<Number of HPI Coils, default == -1 (216)
     int32_t m_FirstSample;///<First Sample of Epoch, default == -1 (208)
     int32_t m_LastSample;///<Last Sample of Epoch, default == -1 (209)
-    LFHPICoil m_LFHPICoil;///<HPI Coil block (110)
+    LFArrayPtr<LFHPICoil> m_LFHPICoil;///<HPI Coil block (110)
     LFIsotrak m_LFIsotrak;///<Isotrak block (107)
 public:
     ///Constructor
@@ -36,11 +36,11 @@ public:
     ///Returns the Last Sample
     int32_t GetLastSample();
     ///Returns the HPI Coil block
-    LFHPICoil& GetLFHPICoil();
+    LFArrayPtr<LFHPICoil>& GetLFHPICoil();
     ///Returns the Isotrak block
     LFIsotrak& GetLFIsotrak();
     ///Sets the Sampling Frequency
-    void SetSamplingFrequency( const int32_t src );
+    void SetSamplingFrequency( const float src );
     ///Sets the Number of Channels
     void SetNumberOfChannels( const int32_t src );
     ///Sets the Number of Averages

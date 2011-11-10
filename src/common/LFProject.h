@@ -23,5 +23,7 @@ public:
     string& GetName();
     ///Returns Project description
     string& GetComment();
+    ///Sets Project ID
+    void SetId( const int32_t src);
 };
 #endif

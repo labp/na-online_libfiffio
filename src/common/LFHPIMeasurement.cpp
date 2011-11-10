@@ -16,7 +16,7 @@ void LFHPIMeasurement::Init()
     m_NumberOfHPICoils = -1;
     m_FirstSample = -1;
     m_LastSample = -1;
-    m_LFHPICoil.Init();
+    m_LFHPICoil.clear();
     m_LFIsotrak.Init();
 }
 
@@ -50,7 +50,7 @@ int32_t LFHPIMeasurement::GetLastSample()
     return m_LastSample;
 }
 
-LFHPICoil& LFHPIMeasurement::GetLFHPICoil()
+LFArrayPtr<LFHPICoil>& LFHPIMeasurement::GetLFHPICoil()
 {
     return m_LFHPICoil;
 }
@@ -60,7 +60,7 @@ LFIsotrak& LFHPIMeasurement::GetLFIsotrak()
     return m_LFIsotrak;
 }
 
-void LFHPIMeasurement::SetSamplingFrequency( const int32_t src )
+void LFHPIMeasurement::SetSamplingFrequency( const float src )
 {
     m_SamplingFrequency = src;
 }

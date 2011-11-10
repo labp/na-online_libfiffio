@@ -113,7 +113,7 @@ void LFMeasurementInfo::SetNumberOfChannels( const int32_t src )
     m_NumberOfChannels = src;
 }
 
-void LFMeasurementInfo::SetSamplingFrequency( const int32_t src )
+void LFMeasurementInfo::SetSamplingFrequency( const float src )
 {
     m_SamplingFrequency = src;
 }

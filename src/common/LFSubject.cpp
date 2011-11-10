@@ -2,7 +2,7 @@
 #include "LFSubject.h"
 
 LFSubject::LFSubject() :
-    m_Birthday( -1 ), m_Weight( -FLT_MAX ), m_Height( -FLT_MAX )
+    m_Birthday( -1 ), m_Sex( sex_unknown ), m_Hand( hand_unknown ), m_Weight( -FLT_MAX ), m_Height( -FLT_MAX )
 {
 
 }
@@ -14,8 +14,8 @@ void LFSubject::Init()
     m_FirstName.clear();
     m_MiddleName.clear();
     m_Birthday = -1;
-    //m_Sex
-    //m_Hand
+    m_Sex = sex_unknown;
+    m_Hand = hand_unknown;
     m_Weight = -FLT_MAX;
     m_Height = -FLT_MAX;
     m_Comment.clear();

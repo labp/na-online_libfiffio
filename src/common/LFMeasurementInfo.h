@@ -74,7 +74,7 @@ public:
     ///Sets the Number of Channels
     void SetNumberOfChannels( const int32_t src );
     ///Sets the Sampling Frequency
-    void SetSamplingFrequency( const int32_t src );
+    void SetSamplingFrequency( const float src );
     ///Sets the analog lowpass
     void SetLowpass( const float src );
     ///Sets the analog highpass

@@ -27,3 +27,8 @@ string& LFProject::GetComment()
 {
     return m_Comment;
 }
+
+void LFProject::SetId( const int32_t src)
+{
+    m_Id=src;
+}
