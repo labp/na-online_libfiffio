@@ -1,6 +1,7 @@
 #ifndef LFINTERFACE_H
 #define LFINTERFACE_H
 
+#include "LFReturnCodes.h"
 #include "LFData.h"
 
 /**
@@ -12,7 +13,7 @@ public:
     /**
      * Reads the fiff - file and returns the LFFiffData - Object
      */
-    static int fiffRead( LFData& output, const char* path );
+    static returncode_t fiffRead( LFData& output, const char* path );
 };
 
 #endif

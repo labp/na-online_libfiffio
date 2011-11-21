@@ -9,8 +9,8 @@ using std::string;
 class LFDataAcquisitionParameters
 {
 protected:
-    string m_DAcqPars;///<Megacq parameters (150)
-    string m_DAcqStim;///<Megacq stimulus parameters (151)
+    string m_DAcqPars;/**< Megacq parameters (150) */
+    string m_DAcqStim;/**< Megacq stimulus parameters (151) */
 public:
     /**
      * Sets all member variables to defaults

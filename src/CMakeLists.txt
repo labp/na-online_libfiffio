@@ -6,10 +6,25 @@ ADD_DEFINITIONS(-Wall -fPIC)
 
 SET(SOURCES
 	fiffio.cpp
+	LFElementHeader.cpp
+	LFFileFIFF.cpp
+	LFDataIO.cpp
+	LFMeasurementIO.cpp
+	LFMeasurementInfoIO.cpp
+	LFSubjectIO.cpp
+	LFProjectIO.cpp
 )
 
 SET(HEADERS
-#	fiffio.h
+	LFTags.h
+	LFBlocks.h
+	LFElementHeader.h
+	LFFileFIFF.h
+	LFDataIO.h
+	LFMeasurementIO.h
+	LFMeasurementInfoIO.h
+	LFSubjectIO.h
+	LFProjectIO.h
 )
 
 SET(COMMON_HEADERS_PATH ${CMAKE_CURRENT_SOURCE_DIR}/common/)

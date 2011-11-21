@@ -9,7 +9,7 @@
 class LFData
 {
 protected:
-    LFMeasurement m_LFMeasurement;///<Measurement block (100)
+    LFMeasurement m_LFMeasurement;/**< Measurement block (100) */
 public:
     /**
      * Constructor

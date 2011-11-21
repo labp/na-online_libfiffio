@@ -1,24 +1,22 @@
-//#include <fiff.h>
-//#include <err.h>
-//#include <raw_info.h>
-//#include "libfiffio.h"
-//#include </usr/include/c++/4.4/string>
+#include <stdlib.h>
+#include <string.h>
 
-#include "LFInterface.h"
-//int testlibfunction( const char* a );
+#include "./common/LFInterface.h"
+#include "LFFileFIFF.h"
 
-int readStaticData( const char* path )
+#include "LFDataIO.h"
+
+returncode_t LFInterface::fiffRead(LFData& output, const char* path)
 {
-//    rawInfo info;
-//    if( ( info = fiff_load_raw_info( path ) ) == NULL )
-//    {
-//        return 100;
-//    }
-//    return testlibfunction("aaa");
-    return 0;
-}
-
-int LFInterface::fiffRead(LFData& output, const char* path)
-{
-    return 0;
+    LFFileFIFF file;
+    returncode_t ret=rc_error_unknown;
+    ret=file.OpenRead(path);
+    if(ret!=rc_normal)return ret;
+    ret=LFDataIO::Read(output,file);
+    if(ret!=rc_normal)
+    {
+        file.Close();
+        return ret;
+    }
+    return file.Close();
 }
