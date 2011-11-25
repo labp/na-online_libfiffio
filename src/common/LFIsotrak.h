@@ -9,7 +9,7 @@
 class LFIsotrak
 {
 protected:
-    LFDigitisationPoint m_DigitisationPoint;///<Digitisation Point (213)
+    LFDigitisationPoint m_DigitisationPoint;/**< Digitisation Point (213) */
 public:
     /**
      * Sets all member variables to defaults

@@ -33,11 +33,11 @@ returncode_t LFSubjectIO::Read( LFSubject& out, LFFileFIFF& file )
                 memset(buf,0,sz);
                 ret=file.ReadString(buf,sz-1);
                 if( ret != rc_normal ){
-                    delete buf;
+                    delete[] buf;
                     return ret;
                 }
                 out.SetHIS_ID( buf );
-                delete buf;
+                delete[] buf;
                 break;
             }
             case tag_subj_first_name:
@@ -47,11 +47,11 @@ returncode_t LFSubjectIO::Read( LFSubject& out, LFFileFIFF& file )
                 memset(buf,0,sz);
                 ret=file.ReadString(buf,sz-1);
                 if( ret != rc_normal ){
-                    delete buf;
+                    delete[] buf;
                     return ret;
                 }
                out.SetFirstName( buf );
-                delete buf;
+                delete[] buf;
                 break;
             }
             case tag_subj_middle_name:
@@ -61,11 +61,11 @@ returncode_t LFSubjectIO::Read( LFSubject& out, LFFileFIFF& file )
                 memset(buf,0,sz);
                 ret=file.ReadString(buf,sz-1);
                 if( ret != rc_normal ){
-                    delete buf;
+                    delete[] buf;
                     return ret;
                 }
                 out.SetMiddleName( buf );
-                delete buf;
+                delete[] buf;
                 break;
             }
             case tag_subj_last_name:
@@ -75,11 +75,11 @@ returncode_t LFSubjectIO::Read( LFSubject& out, LFFileFIFF& file )
                 memset(buf,0,sz);
                 ret=file.ReadString(buf,sz-1);
                 if( ret != rc_normal ){
-                    delete buf;
+                    delete[] buf;
                     return ret;
                 }
                 out.SetLastName( buf );
-                delete buf;
+                delete[] buf;
                 break;
             }
             case tag_subj_birth_day:
@@ -134,11 +134,11 @@ returncode_t LFSubjectIO::Read( LFSubject& out, LFFileFIFF& file )
                 memset(buf,0,sz);
                 ret=file.ReadString(buf,sz-1);
                 if( ret != rc_normal ){
-                    delete buf;
+                    delete[] buf;
                     return ret;
                 }
                 out.SetComment( buf );
-                delete buf;
+                delete[] buf;
                 break;
             }
             default:

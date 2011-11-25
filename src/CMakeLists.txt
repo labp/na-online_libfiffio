@@ -13,6 +13,8 @@ SET(SOURCES
 	LFMeasurementInfoIO.cpp
 	LFSubjectIO.cpp
 	LFProjectIO.cpp
+	LFHPIMeasurementIO.cpp
+	LFHPICoilIO.cpp
 )
 
 SET(HEADERS
@@ -25,6 +27,8 @@ SET(HEADERS
 	LFMeasurementInfoIO.h
 	LFSubjectIO.h
 	LFProjectIO.h
+	LFHPIMeasurementIO.h
+	LFHPICoilIO.h
 )
 
 SET(COMMON_HEADERS_PATH ${CMAKE_CURRENT_SOURCE_DIR}/common/)

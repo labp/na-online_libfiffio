@@ -11,8 +11,8 @@ using namespace std;
 class LFHPISubsystem
 {
 protected:
-    int32_t m_NumberOfHPICoils;///<Number of HPI Coils, default == -1 (216)
-    string m_EventChannel;///<Event channel name (602)
+    int32_t m_NumberOfHPICoils;/**< Number of HPI Coils, default == -1 (216) */
+    string m_EventChannel;/**< Event channel name (602) */
     //HPI Coil (110)
 public:
     /**

@@ -11,29 +11,29 @@ using namespace std;
 class LFSubject
 {
 public:
-    enum sex_t///<Patient's sex TODO(Evfimevskiy): die Werte sind in dem Standard nicht definiert
+    enum sex_t/**< Patient's sex TODO(Evfimevskiy): die Werte sind in dem Standard nicht definiert */
     {
         sex_unknown=-1
         ,sex_m=0
         ,sex_f=1
     };
-    enum hand_t///<Right- or left-handed patient TODO(Evfimevskiy): die Werte sind in dem Standard nicht definiert
+    enum hand_t/**< Right- or left-handed patient TODO(Evfimevskiy): die Werte sind in dem Standard nicht definiert */
     {
         hand_unknown=-1
         ,hand_right=0
         ,hand_left=1
     };
 protected:
-    string m_HIS_ID;///<HIS ID (410) ID used in the Hospital Information System
-    string m_LastName;///<Last Name (403)
-    string m_FirstName;///<First Name (401)
-    string m_MiddleName;///<Middle Name (402)
-    int32_t m_Birthday;///<Birthdate (404)
-    sex_t m_Sex;///<Patient's sex, default == sex_unknown (405)
-    hand_t m_Hand;///<Right- or left-handed patient, default == hand_unknown (406)
-    float m_Weight;///<Body weight, kg, default == -FLT_MAX (407)
-    float m_Height;///<Body height, m, default == -FLT_MAX (408)
-    string m_Comment;///<Comment (409)
+    string m_HIS_ID;/**< HIS ID (410) ID used in the Hospital Information System */
+    string m_LastName;/**< Last Name (403) */
+    string m_FirstName;/**< First Name (401) */
+    string m_MiddleName;/**< Middle Name (402) */
+    int32_t m_Birthday;/**< Birthdate (404) */
+    sex_t m_Sex;/**< Patient's sex, default == sex_unknown (405) */
+    hand_t m_Hand;/**< Right- or left-handed patient, default == hand_unknown (406) */
+    float m_Weight;/**< Body weight, kg, default == -FLT_MAX (407) */
+    float m_Height;/**< Body height, m, default == -FLT_MAX (408) */
+    string m_Comment;/**< Comment (409) */
 public:
     /**
      * Constructor

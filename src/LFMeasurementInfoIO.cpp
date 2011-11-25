@@ -22,13 +22,14 @@ returncode_t LFMeasurementInfoIO::Read( LFMeasurementInfo& out, LFFileFIFF& file
                             return ret;
                         break;//block_subject
                     case block_project:
-                        //                       ret=LFSubjectIO::Read(out.GetLFProject(),file);
-                        //                       if(ret!=rc_normal)return ret;
-                        //                       break;//block_project
+                        ret = LFProjectIO::Read( out.GetLFProject(), file );
+                        if( ret != rc_normal )
+                            return ret;
+                        break;//block_project
                     case block_hpi_meas:
-                        //                       ret=LFSubjectIO::Read(out.GetLFHPIMeasurement(),file);
-                        //                       if(ret!=rc_normal)return ret;
-                        //                       break;//block_hpi_meas
+                        ret=LFHPIMeasurementIO::Read(out.GetLFHPIMeasurement(),file);
+                        if(ret!=rc_normal)return ret;
+                        break;//block_hpi_meas
                     default:
                         ret = file.SkipBlock();
                         if( ret != rc_normal )

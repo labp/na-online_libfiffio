@@ -11,8 +11,8 @@ using namespace std;
 class LFEvents
 {
 protected:
-    vector< int32_t > m_EventChannels;///<Event channel numbers
-    vector< int32_t > m_EventList;///<List of events, 3 integers per event: [number of samples, before, after]
+    vector< int32_t > m_EventChannels;/**< Event channel numbers */
+    vector< int32_t > m_EventList;/**< List of events, 3 integers per event: [number of samples, before, after] */
 public:
     /**
      * Sets all member variables to default

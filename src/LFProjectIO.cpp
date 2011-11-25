@@ -42,11 +42,11 @@ returncode_t LFProjectIO::Read( LFProject& out, LFFileFIFF& file )
                 memset(buf,0,sz);
                 ret=file.ReadString(buf,sz-1);
                 if( ret != rc_normal ){
-                    delete buf;
+                    delete[] buf;
                     return ret;
                 }
                 out.GetName() = buf;
-                delete buf;
+                delete[] buf;
                 break;
             }
             case tag_proj_comment:
@@ -56,11 +56,11 @@ returncode_t LFProjectIO::Read( LFProject& out, LFFileFIFF& file )
                 memset(buf,0,sz);
                 ret=file.ReadString(buf,sz-1);
                 if( ret != rc_normal ){
-                    delete buf;
+                    delete[] buf;
                     return ret;
                 }
                 out.GetComment()= buf;
-                delete buf;
+                delete[] buf;
                 break;
             }
            default:

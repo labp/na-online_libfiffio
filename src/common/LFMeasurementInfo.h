@@ -20,22 +20,22 @@ using namespace std;
 class LFMeasurementInfo
 {
 protected:
-    LFSubject m_LFSubject;///<Subject block (106)
-    LFProject m_LFProject;///<Project block (111)
-    LFHPIMeasurement m_LFHPIMeasurement;///<HPI Measurement block (108)
-    LFSSP m_LFSSP;///<SSP block (313)
-    LFEvents m_LFEvents;///<Events block (115)
-    LFDataAcquisitionParameters m_LFDataAcquisitionParameters;///<Data Acquisition Parameters block (117)
-    int32_t m_NumberOfChannels;///<Number of Channels, default == -1 (200)
-    float m_SamplingFrequency;///<Sampling Frequency, Hz, default == -FLT_MAX (201)
-    float m_Lowpass;///<Analog lowpass, Hz, default == -FLT_MAX (219)
-    float m_Highpass;///<Analog highpass, Hz, default == -FLT_MAX (223)
-    int32_t m_DataPack;///<How the raw data is packed, default == -1 (202)
-    float m_LineFreq;///<Basic line interference frequency, Hz, default == -FLT_MAX (235)
-    int32_t m_GantryAngle;///<Tilt angle of the dewar in degrees, default == 0 (282)
-    LFChannelInfo m_LFChannelInfo;///<Channel descriptor (203)
-    vector< int32_t > m_BadChannels;///<List of bad channels (220)
-    LFHPISubsystem m_LFHPISubsystem;///<HPI Subsystem block (121)
+    LFSubject m_LFSubject;/**< Subject block (106) */
+    LFProject m_LFProject;/**< Project block (111) */
+    LFHPIMeasurement m_LFHPIMeasurement;/**< HPI Measurement block (108) */
+    LFSSP m_LFSSP;/**< SSP block (313) */
+    LFEvents m_LFEvents;/**< Events block (115) */
+    LFDataAcquisitionParameters m_LFDataAcquisitionParameters;/**< Data Acquisition Parameters block (117) */
+    int32_t m_NumberOfChannels;/**< Number of Channels, default == -1 (200) */
+    float m_SamplingFrequency;/**< Sampling Frequency, Hz, default == -FLT_MAX (201) */
+    float m_Lowpass;/**< Analog lowpass, Hz, default == -FLT_MAX (219) */
+    float m_Highpass;/**< Analog highpass, Hz, default == -FLT_MAX (223) */
+    int32_t m_DataPack;/**< How the raw data is packed, default == -1 (202) */
+    float m_LineFreq;/**< Basic line interference frequency, Hz, default == -FLT_MAX (235) */
+    int32_t m_GantryAngle;/**< Tilt angle of the dewar in degrees, default == 0 (282) */
+    LFChannelInfo m_LFChannelInfo;/**< Channel descriptor (203) */
+    vector< int32_t > m_BadChannels;/**< List of bad channels (220) */
+    LFHPISubsystem m_LFHPISubsystem;/**< HPI Subsystem block (121) */
 public:
     /**
      * Constructor
