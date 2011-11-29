@@ -6,6 +6,7 @@
 #include "LFSubjectIO.h"
 #include "LFProjectIO.h"
 #include "LFHPIMeasurementIO.h"
+#include "LFIsotrakIO.h"
 
 class LFMeasurementInfoIO
 {

@@ -5,6 +5,7 @@
 #include <vector>
 using namespace std;
 
+#include "LFArrayPtr.h"
 #include "LFSubject.h"
 #include "LFProject.h"
 #include "LFHPIMeasurement.h"
@@ -13,6 +14,7 @@ using namespace std;
 #include "LFDataAcquisitionParameters.h"
 #include "LFChannelInfo.h"
 #include "LFHPISubsystem.h"
+#include "LFIsotrak.h"
 
 /**
  * Measurement-Info block (101)
@@ -23,6 +25,7 @@ protected:
     LFSubject m_LFSubject;/**< Subject block (106) */
     LFProject m_LFProject;/**< Project block (111) */
     LFHPIMeasurement m_LFHPIMeasurement;/**< HPI Measurement block (108) */
+    LFIsotrak m_LFIsotrak;/**< Isotrak block (107) */
     LFSSP m_LFSSP;/**< SSP block (313) */
     LFEvents m_LFEvents;/**< Events block (115) */
     LFDataAcquisitionParameters m_LFDataAcquisitionParameters;/**< Data Acquisition Parameters block (117) */
@@ -33,7 +36,7 @@ protected:
     int32_t m_DataPack;/**< How the raw data is packed, default == -1 (202) */
     float m_LineFreq;/**< Basic line interference frequency, Hz, default == -FLT_MAX (235) */
     int32_t m_GantryAngle;/**< Tilt angle of the dewar in degrees, default == 0 (282) */
-    LFChannelInfo m_LFChannelInfo;/**< Channel descriptor (203) */
+    LFArrayPtr<LFChannelInfo> m_LFChannelInfo;/**< Channel descriptor (203) */
     vector< int32_t > m_BadChannels;/**< List of bad channels (220) */
     LFHPISubsystem m_LFHPISubsystem;/**< HPI Subsystem block (121) */
 public:
@@ -57,6 +60,10 @@ public:
      * Returns HPI Measurement block
      */
     LFHPIMeasurement& GetLFHPIMeasurement();
+    /**
+     * Returns the Isotrak block
+     */
+    LFIsotrak& GetLFIsotrak();
     /**
      * Returns SSP block
      */
@@ -98,9 +105,9 @@ public:
      */
     int32_t GetGantryAngle();
     /**
-     * Returns the channel descriptor
+     * Returns the channel descriptors
      */
-    LFChannelInfo& GetLFChannelInfo();
+    LFArrayPtr<LFChannelInfo>& GetLFChannelInfo();
     /**
      * Returns the list of bad channels
      */

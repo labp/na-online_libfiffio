@@ -25,11 +25,6 @@ returncode_t LFHPIMeasurementIO::Read( LFHPIMeasurement& out, LFFileFIFF& file )
                             return ret;
                         break;//block_hpi_coil
                     }
-                    case block_isotrak:
-//                        ret = LFHPICoilIO::Read( out.GetLFMeasurementInfo(), file );
-//                        if( ret != rc_normal )
-//                            return ret;
-//                        break;//block_hpi_coil
                     default:
                         ret = file.SkipBlock();
                         if( ret != rc_normal )

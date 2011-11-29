@@ -30,6 +30,11 @@ returncode_t LFMeasurementInfoIO::Read( LFMeasurementInfo& out, LFFileFIFF& file
                         ret=LFHPIMeasurementIO::Read(out.GetLFHPIMeasurement(),file);
                         if(ret!=rc_normal)return ret;
                         break;//block_hpi_meas
+                    case block_isotrak:
+                        ret = LFIsotrakIO::Read( out.GetLFIsotrak(), file );
+                        if( ret != rc_normal )
+                            return ret;
+                        break;//block_isotrak
                     default:
                         ret = file.SkipBlock();
                         if( ret != rc_normal )
@@ -111,6 +116,63 @@ returncode_t LFMeasurementInfoIO::Read( LFMeasurementInfo& out, LFFileFIFF& file
                 //            for(size_t i=0; i<sz; i++)dst[i]=*( ( const int32_t* )tag.data );//alte Version
                 //                break;//tag_bad_chs
                 //            }
+            case tag_ch_info:
+            {
+                int32_t buf_int;
+                float buf_float;
+                int32_t sz = header.GetSize();
+                LFChannelInfo& dst = out.GetLFChannelInfo().AddNew();
+                ret = file.Read< int32_t > ( buf_int );
+                if( ret != rc_normal )
+                    return ret;
+                dst.SetScanNo( buf_int );
+                ret = file.Read< int32_t > ( buf_int );
+                if( ret != rc_normal )
+                    return ret;
+                dst.SetLogNo( buf_int );
+                ret = file.Read< int32_t > ( buf_int );
+                if( ret != rc_normal )
+                    return ret;
+                dst.SetKind( buf_int );
+                ret = file.Read< float > ( buf_float );
+                if( ret != rc_normal )
+                    return ret;
+                dst.SetRange( buf_float );
+                ret = file.Read< float > ( buf_float );
+                if( ret != rc_normal )
+                    return ret;
+                dst.SetCal( buf_float );
+                ret = file.Read< int32_t > ( buf_int );
+                if( ret != rc_normal )
+                    return ret;
+                dst.SetCoilType( buf_int );
+                ret = file.ReadArrayFloat( dst.GetR0(), sizeof(float) * 3 );
+                if( ret != rc_normal )
+                    return ret;
+                ret = file.ReadArrayFloat( dst.GetEx(), sizeof(float) * 3 );
+                if( ret != rc_normal )
+                    return ret;
+                ret = file.ReadArrayFloat( dst.GetEy(), sizeof(float) * 3 );
+                if( ret != rc_normal )
+                    return ret;
+                ret = file.ReadArrayFloat( dst.GetEz(), sizeof(float) * 3 );
+                if( ret != rc_normal )
+                    return ret;
+                ret = file.Read< int32_t > ( buf_int );
+                if( ret != rc_normal )
+                    return ret;
+                dst.SetUnit( ( fiffunits_t )buf_int );
+                ret = file.Read< int32_t > ( buf_int );
+                if( ret != rc_normal )
+                    return ret;
+                dst.SetUnitMul( ( fiffmultipliers_t )buf_int );
+                file.Skip( sz - 80 );//Unknown data
+//                                unsigned char* p=new unsigned char[sz];//dbg
+//                                file.ReadString((char*)p,sz);//dbg
+//                                for(int32_t i=0; i<sz; i++)printf("%x ",p[i]);//dbg
+//                                printf("\n");//dbg
+                break;//tag_ch_info
+            }
             default:
                 ret=file.Skip( header.GetSize() );
                 if( ret != rc_normal )

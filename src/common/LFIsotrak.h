@@ -2,6 +2,7 @@
 #define LFISOTRAK_H
 
 #include "LFDigitisationPoint.h"
+#include "LFArrayPtr.h"
 
 /**
  * Isotrak block (107)
@@ -9,7 +10,7 @@
 class LFIsotrak
 {
 protected:
-    LFDigitisationPoint m_DigitisationPoint;/**< Digitisation Point (213) */
+    LFArrayPtr<LFDigitisationPoint> m_DigitisationPoint;/**< Digitisation Point (213) */
 public:
     /**
      * Sets all member variables to defaults
@@ -18,6 +19,6 @@ public:
     /**
      * Returns Digitisation Point (213)
      */
-    LFDigitisationPoint& GetLFDigitisationPoint();
+    LFArrayPtr<LFDigitisationPoint>& GetLFDigitisationPoint();
 };
 #endif

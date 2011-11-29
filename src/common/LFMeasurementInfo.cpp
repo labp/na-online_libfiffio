@@ -13,6 +13,7 @@ void LFMeasurementInfo::Init()
     m_LFSubject.Init();
     m_LFProject.Init();
     m_LFHPIMeasurement.Init();
+    m_LFIsotrak.Init();
     m_LFSSP.Init();
     m_LFEvents.Init();
     m_LFDataAcquisitionParameters.Init();
@@ -23,7 +24,7 @@ void LFMeasurementInfo::Init()
     m_DataPack = -1;
     m_LineFreq = -FLT_MAX;
     m_GantryAngle = 0;
-    m_LFChannelInfo.Init();
+    m_LFChannelInfo.clear();
     m_BadChannels.clear();
     m_LFHPISubsystem.Init();
 }
@@ -41,6 +42,11 @@ LFProject& LFMeasurementInfo::GetLFProject()
 LFHPIMeasurement& LFMeasurementInfo::GetLFHPIMeasurement()
 {
     return m_LFHPIMeasurement;
+}
+
+LFIsotrak& LFMeasurementInfo::GetLFIsotrak()
+{
+    return m_LFIsotrak;
 }
 
 LFSSP& LFMeasurementInfo::GetLFSSP()
@@ -93,7 +99,7 @@ int32_t LFMeasurementInfo::GetGantryAngle()
     return m_GantryAngle;
 }
 
-LFChannelInfo& LFMeasurementInfo::GetLFChannelInfo()
+LFArrayPtr<LFChannelInfo>& LFMeasurementInfo::GetLFChannelInfo()
 {
     return m_LFChannelInfo;
 }

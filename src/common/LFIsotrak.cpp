@@ -2,10 +2,10 @@
 
 void LFIsotrak::Init()
 {
-    m_DigitisationPoint.Init();
+    m_DigitisationPoint.clear();
 }
 
-LFDigitisationPoint& LFIsotrak::GetLFDigitisationPoint()
+LFArrayPtr<LFDigitisationPoint>& LFIsotrak::GetLFDigitisationPoint()
 {
     return m_DigitisationPoint;
 }

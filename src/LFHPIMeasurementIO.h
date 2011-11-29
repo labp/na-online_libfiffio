@@ -4,6 +4,7 @@
 #include "LFFileFIFF.h"
 #include "LFHPIMeasurement.h"
 #include "LFHPICoilIO.h"
+#include "LFIsotrakIO.h"
 
 class LFHPIMeasurementIO
 {

@@ -4,7 +4,6 @@
 #include <inttypes.h>
 
 #include "LFHPICoil.h"
-#include "LFIsotrak.h"
 
 /**
  * HPI Measurement block (108)
@@ -19,7 +18,6 @@ protected:
     int32_t m_FirstSample;/**< First Sample of Epoch, default == -1 (208) */
     int32_t m_LastSample;/**< Last Sample of Epoch, default == -1 (209) */
     LFArrayPtr<LFHPICoil> m_LFHPICoil;/**< HPI Coil block (110) */
-    LFIsotrak m_LFIsotrak;/**< Isotrak block (107) */
 public:
     /**
      * Constructor
@@ -57,10 +55,6 @@ public:
      * Returns the HPI Coil block
      */
     LFArrayPtr<LFHPICoil>& GetLFHPICoil();
-    /**
-     * Returns the Isotrak block
-     */
-    LFIsotrak& GetLFIsotrak();
     /**
      * Sets the Sampling Frequency
      */

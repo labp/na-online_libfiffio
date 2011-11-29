@@ -2,19 +2,6 @@
 #include <memory.h>
 #include "LFHPICoilIO.h"
 
-//bool LFHPICoilIO::Read( LFArrayPtr<LFHPICoil>& out, fiffDirNode parentdirnode, fiffFile& file )
-//{
-//    for(int i=0; i<parentdirnode->nchild; i++)
-//    {
-//        fiffDirNode dirnode=parentdirnode->children[i];
-//        if(dirnode->type==FIFFB_HPI_COIL){
-//            LFHPICoil& obj=out.AddNew();
-//            Read(obj,dirnode,file);
-//        }
-//    }
-//    return true;
-//}
-
 returncode_t LFHPICoilIO::Read( LFHPICoil& out, LFFileFIFF& file )
 {
     LFElementHeader header;
@@ -53,42 +40,33 @@ returncode_t LFHPICoilIO::Read( LFHPICoil& out, LFFileFIFF& file )
             case tag_epoch:
             {
                 int32_t sz=header.GetSize();
-                char* buf=new char[sz];
-                ret=file.ReadString(buf,sz);
-                if( ret != rc_normal ){
-                    delete[] buf;
-                    return ret;
-                }
                 LFArrayFloat2d & dst=out.GetEpoch();
                 dst.AllocateBytes(sz);
-                memcpy(dst.GetElement(),buf,sz);
-                delete[] buf;
+                ret = file.ReadArrayFloat( ( float* )dst.data(), sz );
+                if( ret != rc_normal )
+                    return ret;
                 break;//tag_epoch
             }
             case tag_hpi_slopes:
             {
-                int32_t sz=header.GetSize();
-                char* buf=new char[sz];
-                ret=file.ReadString(buf,sz);
-                if( ret != rc_normal ){
-                    delete[] buf;
+                int32_t sz = header.GetSize();
+                vector< float >& dst = out.GetSlopes();
+                dst.resize( sz / sizeof(float) );
+                ret = file.ReadArrayFloat( ( float* )dst.data(), sz );
+                if( ret != rc_normal )
                     return ret;
-                }
-                vector< float >& dst=out.GetSlopes();
-                sz=sz/sizeof(float);
-                dst.resize(sz);
-                for(int32_t i=0; i<sz; i++)LFFileFIFF::swab(( ( const float* )buf )[i]);
-                for(int32_t i=0; i<sz; i++)dst[i]=( ( const float* )buf )[i];
                 break;//tag_hpi_slopes
             }
-//            case tag_hpi_corr_coeff:
-//            {
-//                vector< float >& dst=out.GetCorrelationCoefficient();
-//                size_t sz=tag.size/sizeof(float);
-//                dst.resize(sz);
-//                for(size_t i=0; i<sz; i++)dst[i]=*( ( const float* )tag.data );
-//            }
-//            break;//tag_hpi_corr_coeff
+            case tag_hpi_corr_coeff:
+            {
+                int32_t sz = header.GetSize();
+                vector< float >& dst = out.GetCorrelationCoefficient();
+                dst.resize( sz / sizeof(float) );
+                ret = file.ReadArrayFloat( ( float* )dst.data(), sz );
+                if( ret != rc_normal )
+                    return ret;
+                break;//tag_hpi_corr_coeff
+            }
             case tag_hpi_coil_freq:
             {
                 float buf;

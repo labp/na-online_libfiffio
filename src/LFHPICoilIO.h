@@ -7,7 +7,6 @@
 class LFHPICoilIO
 {
 public:
-//    static bool Read( LFArrayPtr<LFHPICoil>& out, fiffDirNode parentdirnode, fiffFile& file );
     static returncode_t Read( LFHPICoil& out, LFFileFIFF& file );
 };
 

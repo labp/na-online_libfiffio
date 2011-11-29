@@ -33,6 +33,10 @@ public:
      */
     returncode_t ReadString( char* out, int32_t length );
     /**
+     * Reads an array of floats
+     */
+    returncode_t ReadArrayFloat( float* out, int32_t bytes );
+    /**
      * Skips bytes in the file
      */
     returncode_t Skip( int32_t bytes );

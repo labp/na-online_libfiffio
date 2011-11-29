@@ -17,7 +17,6 @@ void LFHPIMeasurement::Init()
     m_FirstSample = -1;
     m_LastSample = -1;
     m_LFHPICoil.clear();
-    m_LFIsotrak.Init();
 }
 
 float LFHPIMeasurement::GetSamplingFrequency()
@@ -53,11 +52,6 @@ int32_t LFHPIMeasurement::GetLastSample()
 LFArrayPtr<LFHPICoil>& LFHPIMeasurement::GetLFHPICoil()
 {
     return m_LFHPICoil;
-}
-
-LFIsotrak& LFHPIMeasurement::GetLFIsotrak()
-{
-    return m_LFIsotrak;
 }
 
 void LFHPIMeasurement::SetSamplingFrequency( const float src )
