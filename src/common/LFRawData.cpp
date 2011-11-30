@@ -16,7 +16,7 @@ void LFRawData::Init()
     m_FirstSample = -1;
     m_DataSkip = -1;
     m_DataSkipSamples = -1;
-    m_LFDataBuffer.Init();
+    m_LFDataBuffer.clear();
 }
 
 int32_t LFRawData::GetFirstSample()
@@ -34,7 +34,7 @@ int32_t LFRawData::GetDataSkipSamples()
     return m_DataSkipSamples;
 }
 
-LFDataBuffer& LFRawData::GetLFDataBuffer()
+LFArrayPtr<LFDataBuffer>& LFRawData::GetLFDataBuffer()
 {
     return m_LFDataBuffer;
 }

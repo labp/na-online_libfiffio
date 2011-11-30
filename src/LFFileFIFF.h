@@ -33,6 +33,14 @@ public:
      */
     returncode_t ReadString( char* out, int32_t length );
     /**
+     * Reads an array of int16_t
+     */
+    returncode_t ReadArrayInt16( int16_t* out, int32_t bytes );
+    /**
+     * Reads an array of int32_t
+     */
+    returncode_t ReadArrayInt32( int32_t* out, int32_t bytes );
+    /**
      * Reads an array of floats
      */
     returncode_t ReadArrayFloat( float* out, int32_t bytes );

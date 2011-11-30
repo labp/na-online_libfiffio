@@ -21,7 +21,12 @@ returncode_t LFMeasurementIO::Read( LFMeasurement& out, LFFileFIFF& file )
                         if( ret != rc_normal )
                             return ret;
                         break;//block_meas_info
-                    default:
+                    case block_raw_data:
+                        ret = LFRawDataIO::Read( out.GetLFRawData(), file );
+                        if( ret != rc_normal )
+                            return ret;
+                        break;//block_raw_data
+                   default:
                         ret = file.SkipBlock();
                         if( ret != rc_normal )
                             return ret;

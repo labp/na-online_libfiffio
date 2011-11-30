@@ -5,6 +5,7 @@
 using namespace std;
 
 #include "LFDataBuffer.h"
+#include "LFArrayPtr.h"
 
 /**
  * Raw Data block (102)
@@ -15,7 +16,7 @@ protected:
     int32_t m_FirstSample;/**< The first sample of an epoch, default == -1 (208) */
     int32_t m_DataSkip;/**< Number of blocks to skip before actual data starts, default == -1 (301) */
     int32_t m_DataSkipSamples;/**< Data skip in samples, default == -1 (303) */
-    LFDataBuffer m_LFDataBuffer;/**< Buffer containing measurement data (300) */
+    LFArrayPtr<LFDataBuffer> m_LFDataBuffer;/**< Buffer containing measurement data (300) */
 public:
     /**
      * Constructor
@@ -42,9 +43,9 @@ public:
      */
     int32_t GetDataSkipSamples();
     /**
-     * Returns the buffer containing measurement data
+     * Returns buffers containing measurement data
      */
-    LFDataBuffer& GetLFDataBuffer();
+    LFArrayPtr<LFDataBuffer>& GetLFDataBuffer();
     /**
      * Sets the first sample of an epoch
      */

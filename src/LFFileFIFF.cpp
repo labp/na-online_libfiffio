@@ -60,6 +60,30 @@ returncode_t LFFileFIFF::ReadString( char* out, int32_t length )
     return fread( out, length, 1, m_file ) == 1 ? rc_normal : rc_error_file_read;
 }
 
+returncode_t LFFileFIFF::ReadArrayInt16( int16_t* out, int32_t bytes )
+{
+    if( m_file == NULL || out == NULL )
+        return rc_error_unknown;
+    if( fread( out, bytes, 1, m_file ) != 1 )
+        return rc_error_file_read;
+    int32_t sz = bytes / sizeof(int16_t);
+    for( int32_t i = 0; i < sz; i++ )
+        swab( out[i] );
+    return rc_normal;
+}
+
+returncode_t LFFileFIFF::ReadArrayInt32( int32_t* out, int32_t bytes )
+{
+    if( m_file == NULL || out == NULL )
+        return rc_error_unknown;
+    if( fread( out, bytes, 1, m_file ) != 1 )
+        return rc_error_file_read;
+    int32_t sz = bytes / sizeof(int32_t);
+    for( int32_t i = 0; i < sz; i++ )
+        swab( out[i] );
+    return rc_normal;
+}
+
 returncode_t LFFileFIFF::ReadArrayFloat( float* out, int32_t bytes )
 {
     if( m_file == NULL || out == NULL )

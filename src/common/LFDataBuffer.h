@@ -13,10 +13,10 @@ class LFDataBuffer
 public:
     enum datatype_t/**< Type of the data */
     {
-        dt_unknown,/**< Undefined */
-        dt_int16,/**< int16_t */
-        dt_int32,/**< int32_t */
-        dt_float/**< float */
+        dt_unknown = -1,/**< Undefined */
+        dt_int16 = 2,/**< int16_t */
+        dt_int32 = 3,/**< int32_t */
+        dt_float = 4/**< float */
     };
 protected:
     datatype_t m_DataType;/**< Type of the data in the buffer, default == dt_unknown */
