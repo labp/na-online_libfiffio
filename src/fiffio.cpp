@@ -6,14 +6,47 @@
 
 #include "LFDataIO.h"
 
-returncode_t LFInterface::fiffRead(LFData& output, const char* path)
+returncode_t LFInterface::fiffRead( LFData& output, const char* path )
 {
     LFFileFIFF file;
-    returncode_t ret=rc_error_unknown;
-    ret=file.OpenRead(path);
-    if(ret!=rc_normal)return ret;
-    ret=LFDataIO::Read(output,file);
-    if(ret!=rc_normal)
+    returncode_t ret = rc_error_unknown;
+    ret = file.OpenRead( path );
+    if( ret != rc_normal )
+        return ret;
+    ret = LFDataIO::Read( output, file );
+    if( ret != rc_normal )
+    {
+        file.Close();
+        return ret;
+    }
+    return file.Close();
+}
+
+returncode_t LFInterface::fiffRead( LFSubject& output, const char* path )
+{
+    LFFileFIFF file;
+    returncode_t ret = rc_error_unknown;
+    ret = file.OpenRead( path );
+    if( ret != rc_normal )
+        return ret;
+    ret = LFDataIO::Read( output, file );
+    if( ret != rc_normal )
+    {
+        file.Close();
+        return ret;
+    }
+    return file.Close();
+}
+
+returncode_t LFInterface::fiffRead( LFRawData& output, const char* path )
+{
+    LFFileFIFF file;
+    returncode_t ret = rc_error_unknown;
+    ret = file.OpenRead( path );
+    if( ret != rc_normal )
+        return ret;
+    ret = LFDataIO::Read( output, file );
+    if( ret != rc_normal )
     {
         file.Close();
         return ret;
