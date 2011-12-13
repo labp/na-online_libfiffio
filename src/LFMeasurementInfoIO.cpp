@@ -35,6 +35,21 @@ returncode_t LFMeasurementInfoIO::Read( LFMeasurementInfo& out, LFFileFIFF& file
                         if( ret != rc_normal )
                             return ret;
                         break;//block_isotrak
+                    case block_xfit_proj:
+                        ret = LFSSPIO::Read( out.GetLFSSP(), file );
+                        if( ret != rc_normal )
+                            return ret;
+                        break;//block_xfit_proj
+                    case block_events:
+                        ret = LFEventsIO::Read( out.GetLFEvents(), file );
+                        if( ret != rc_normal )
+                            return ret;
+                        break;//block_events
+                    case block_dacq_pars:
+                        ret = LFDataAcquisitionParametersIO::Read( out.GetLFDataAcquisitionParameters(), file );
+                        if( ret != rc_normal )
+                            return ret;
+                        break;//block_dacq_pars
                     default:
                         ret = file.SkipBlock();
                         if( ret != rc_normal )

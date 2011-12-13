@@ -1,4 +1,5 @@
 #ifndef LFDATAACQUISITIONPARAMETERS_H
+#define LFDATAACQUISITIONPARAMETERS_H
 
 #include <string>
 using std::string;

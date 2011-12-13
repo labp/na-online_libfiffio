@@ -3,6 +3,7 @@
 
 #include <inttypes.h>
 
+#include "LFArrayPtr.h"
 #include "LFProjectionItem.h"
 
 /**
@@ -12,7 +13,7 @@ class LFSSP
 {
 protected:
     int32_t m_NumberOfChannels;/**< Number Of Channels, default == -1 (200) */
-    LFProjectionItem m_LFProjectionItem;/**< Projection Item block (314) */
+    LFArrayPtr<LFProjectionItem> m_LFProjectionItem;/**< Projection Item block (314) */
 public:
     /**
      * Constructor
@@ -27,9 +28,9 @@ public:
      */
     int32_t GetNumberOfChannels();
     /**
-     * Returns the Projection Item block
+     * Returns the Projection Item blocks
      */
-    LFProjectionItem& GetLFProjectionItem();
+    LFArrayPtr<LFProjectionItem>& GetLFProjectionItem();
     /**
      * Sets the Number Of Channels
      */

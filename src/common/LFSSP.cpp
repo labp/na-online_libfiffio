@@ -9,7 +9,7 @@ LFSSP::LFSSP() :
 void LFSSP::Init()
 {
     m_NumberOfChannels = -1;
-    m_LFProjectionItem.Init();
+    m_LFProjectionItem.clear();
 }
 
 int32_t LFSSP::GetNumberOfChannels()
@@ -17,7 +17,7 @@ int32_t LFSSP::GetNumberOfChannels()
     return m_NumberOfChannels;
 }
 
-LFProjectionItem& LFSSP::GetLFProjectionItem()
+LFArrayPtr<LFProjectionItem>& LFSSP::GetLFProjectionItem()
 {
     return m_LFProjectionItem;
 }

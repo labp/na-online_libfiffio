@@ -22,7 +22,7 @@ string& LFProjectionItem::GetDescription()
     return m_Description;
 }
 
-LFProjectionItem::proj_item LFProjectionItem::GetKind()
+LFProjectionItem::proj_item_t LFProjectionItem::GetKind()
 {
     return m_Kind;
 }
@@ -57,7 +57,7 @@ void LFProjectionItem::SetDescription( const char* src )
     m_Description = src;
 }
 
-void LFProjectionItem::SetKind( const proj_item src )
+void LFProjectionItem::SetKind( const proj_item_t src )
 {
     m_Kind = src;
 }

@@ -11,7 +11,7 @@
 class LFProjectionItem
 {
 public:
-    enum proj_item/**< Projection (SSP) types */
+    enum proj_item_t/**< Projection (SSP) types */
     {
         pi_none = 0,/**< Not known. */
         pi_field = 1,/**< Magnetic field shape. */
@@ -22,7 +22,7 @@ public:
     };
 protected:
     string m_Description;/**< Description (206) */
-    proj_item m_Kind;/**< Type of projection definition, default == pi_none (3411) */
+    proj_item_t m_Kind;/**< Type of projection definition, default == pi_none (3411) */
     int32_t m_NumberOfChannels;/**< Number of Channels, default == -1 (200) */
     string m_ChannelNameList;/**< Names of the channels of the projection vectors (3417) */
     float m_Time;/**< s. time of the field sample, default == -FLT_MAX (3412) */
@@ -44,7 +44,7 @@ public:
     /**
      * Returns the type of projection definition
      */
-    proj_item GetKind();
+    proj_item_t GetKind();
     /**
      * Returns Number of Channels
      */
@@ -72,7 +72,7 @@ public:
     /**
      * Sets the type of projection definition
      */
-    void SetKind( const proj_item src );
+    void SetKind( const proj_item_t src );
     /**
      * Sets Number of Channels
      */

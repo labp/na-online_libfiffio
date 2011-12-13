@@ -16,6 +16,10 @@ SET(SOURCES
 	LFHPIMeasurementIO.cpp
 	LFHPICoilIO.cpp
 	LFIsotrakIO.cpp
+	LFSSPIO.cpp
+	LFProjectionItemIO.cpp
+	LFEventsIO.cpp
+	LFDataAcquisitionParametersIO.cpp
 	LFRawDataIO.cpp
 )
 
@@ -32,6 +36,10 @@ SET(HEADERS
 	LFHPIMeasurementIO.h
 	LFHPICoilIO.h
 	LFIsotrakIO.h
+	LFSSPIO.h
+	LFProjectionItemIO.h
+	LFEventsIO.h
+	LFDataAcquisitionParametersIO.h
 	LFRawDataIO.h
 )
 

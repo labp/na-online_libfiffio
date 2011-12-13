@@ -11,8 +11,8 @@ using namespace std;
 class LFEvents
 {
 protected:
-    vector< int32_t > m_EventChannels;/**< Event channel numbers */
-    vector< int32_t > m_EventList;/**< List of events, 3 integers per event: [number of samples, before, after] */
+    vector< int32_t > m_EventChannels;/**< Event channel numbers (600)*/
+    vector< int32_t > m_EventList;/**< List of events, 3 integers per event: [number of samples, before, after] (601)*/
 public:
     /**
      * Sets all member variables to default
@@ -37,7 +37,7 @@ public:
     /**
      * Returns the Element Pointer, or NULL if don't exists
      */
-    int32_t* GetEventListElement( size_t index );
+    int32_t* GetEventListElement( size_t index=0 );
 };
 
 #endif
