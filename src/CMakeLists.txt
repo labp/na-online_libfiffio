@@ -20,7 +20,9 @@ SET(SOURCES
 	LFProjectionItemIO.cpp
 	LFEventsIO.cpp
 	LFDataAcquisitionParametersIO.cpp
+	LFHPISubsystemIO.cpp
 	LFRawDataIO.cpp
+	LFBemIO.cpp
 )
 
 SET(HEADERS
@@ -40,7 +42,9 @@ SET(HEADERS
 	LFProjectionItemIO.h
 	LFEventsIO.h
 	LFDataAcquisitionParametersIO.h
+	LFHPISubsystemIO.h
 	LFRawDataIO.h
+	LFBemIO.h
 )
 
 SET(COMMON_HEADERS_PATH ${CMAKE_CURRENT_SOURCE_DIR}/common/)

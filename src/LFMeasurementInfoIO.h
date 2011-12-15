@@ -10,6 +10,7 @@
 #include "LFSSPIO.h"
 #include "LFEventsIO.h"
 #include "LFDataAcquisitionParametersIO.h"
+#include "LFHPISubsystemIO.h"
 
 class LFMeasurementInfoIO
 {

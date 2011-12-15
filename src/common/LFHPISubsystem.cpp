@@ -22,6 +22,11 @@ string& LFHPISubsystem::GetEventChannel()
     return m_EventChannel;
 }
 
+LFArrayPtr<LFHPICoil>& LFHPISubsystem::GetLFHPICoil()
+{
+    return m_LFHPICoil;
+}
+
 void LFHPISubsystem::SetNumberOfHPICoils( const int32_t src )
 {
     m_NumberOfHPICoils = src;

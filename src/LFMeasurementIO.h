@@ -5,6 +5,7 @@
 #include "LFMeasurement.h"
 #include "LFMeasurementInfoIO.h"
 #include "LFRawDataIO.h"
+#include "LFBemIO.h"
 
 class LFMeasurementIO
 {

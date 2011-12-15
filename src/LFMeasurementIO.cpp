@@ -26,6 +26,11 @@ returncode_t LFMeasurementIO::Read( LFMeasurement& out, LFFileFIFF& file )
                         if( ret != rc_normal )
                             return ret;
                         break;//block_raw_data
+                    case block_bem:
+                        ret = LFBemIO::Read( out.GetLFBem(), file );
+                        if( ret != rc_normal )
+                            return ret;
+                        break;//block_bem
                    default:
                         ret = file.SkipBlock();
                         if( ret != rc_normal )
@@ -36,15 +41,6 @@ returncode_t LFMeasurementIO::Read( LFMeasurement& out, LFFileFIFF& file )
             }
             case tag_block_end:
                 return file.Skip( header.GetSize() );//The block is over
-            case tag_bem_coord_frame:
-            {
-                int32_t buf;
-                ret = file.Read< int32_t > ( buf );
-                if( ret != rc_normal )
-                    return ret;
-                out.SetBemCoordinateFrame( ( LFMeasurement::coord_t )buf );
-                break;
-            }
             default:
                 file.Skip( header.GetSize() );//Unknown element
                 break;

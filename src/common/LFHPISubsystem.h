@@ -5,6 +5,9 @@
 #include <inttypes.h>
 using namespace std;
 
+#include "LFArrayPtr.h"
+#include "LFHPICoil.h"
+
 /**
  * Data about HPI state
  */
@@ -13,7 +16,7 @@ class LFHPISubsystem
 protected:
     int32_t m_NumberOfHPICoils;/**< Number of HPI Coils, default == -1 (216) */
     string m_EventChannel;/**< Event channel name (602) */
-    //HPI Coil (110)
+    LFArrayPtr<LFHPICoil> m_LFHPICoil;/**< HPI Coil block (110) */
 public:
     /**
      * Constructor
@@ -31,6 +34,10 @@ public:
      * Returns Event channel name
      */
     string& GetEventChannel();
+    /**
+     * Returns the HPI Coil block
+     */
+    LFArrayPtr<LFHPICoil>& GetLFHPICoil();
     /**
      * Sets the Number of HPI Coils
      */

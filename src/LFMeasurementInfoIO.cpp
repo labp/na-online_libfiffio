@@ -50,6 +50,11 @@ returncode_t LFMeasurementInfoIO::Read( LFMeasurementInfo& out, LFFileFIFF& file
                         if( ret != rc_normal )
                             return ret;
                         break;//block_dacq_pars
+                    case block_hpi_subsystem:
+                        ret = LFHPISubsystemIO::Read( out.GetLFHPISubsystem(), file );
+                        if( ret != rc_normal )
+                            return ret;
+                        break; //block_hpi_subsystem
                     default:
                         ret = file.SkipBlock();
                         if( ret != rc_normal )
@@ -121,16 +126,8 @@ returncode_t LFMeasurementInfoIO::Read( LFMeasurementInfo& out, LFFileFIFF& file
                 if( ret != rc_normal )
                     return ret;
                 out.SetGantryAngle( buf );
-                break;//tag_data_pack
+                break;//tag_gantry_angle
             }
-                //            case tag_gantry_angle:
-                //            {
-                //                vector< int32_t >& dst=out.GetBadChannels();
-                //                size_t sz=header.GetSize()/sizeof(int32_t);
-                //                dst.resize(sz);
-                //            for(size_t i=0; i<sz; i++)dst[i]=*( ( const int32_t* )tag.data );//alte Version
-                //                break;//tag_bad_chs
-                //            }
             case tag_ch_info:
             {
                 int32_t buf_int;
@@ -187,6 +184,16 @@ returncode_t LFMeasurementInfoIO::Read( LFMeasurementInfo& out, LFFileFIFF& file
 //                                for(int32_t i=0; i<sz; i++)printf("%x ",p[i]);//dbg
 //                                printf("\n");//dbg
                 break;//tag_ch_info
+            }
+            case tag_bad_chs:
+            {
+                vector< int32_t >& dst = out.GetBadChannels();
+                size_t sz = header.GetSize();
+                dst.resize( sz / sizeof(int32_t) );
+                ret = file.ReadArrayInt32( ( int32_t* )dst.data(), sz );
+                if( ret != rc_normal )
+                    return ret;
+                break; //tag_bad_chs
             }
             default:
                 ret=file.Skip( header.GetSize() );
