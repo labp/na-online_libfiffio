@@ -1,3 +1,5 @@
+#include <cstddef>
+
 #include "LFArrayFloat2d.h"
 
 size_t LFArrayFloat2d::GetSize()

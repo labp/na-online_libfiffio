@@ -1,6 +1,7 @@
 #ifndef LFEVENTS_H
 #define LFEVENTS_H
 
+#include <cstddef>
 #include <vector>
 #include <inttypes.h>
 using namespace std;

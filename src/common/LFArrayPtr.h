@@ -1,6 +1,7 @@
 #ifndef LFARRAYPTR_H
 #define LFARRAYPTR_H
 
+#include <cstddef>
 #include <vector>
 using namespace std;
 

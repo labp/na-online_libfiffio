@@ -1,6 +1,7 @@
 #ifndef LFARRAYFLOAT2D_H
 #define LFARRAYFLOAT2D_H
 
+#include <cstddef>
 #include <vector>
 using namespace std;
 

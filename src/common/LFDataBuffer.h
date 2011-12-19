@@ -1,6 +1,7 @@
 #ifndef LFDATABUFFER_H
 #define LFDATABUFFER_H
 
+#include <cstddef>
 #include <inttypes.h>
 #include <vector>
 using namespace std;
