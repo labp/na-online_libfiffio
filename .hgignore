@@ -1,1 +1,9 @@
 build/*
+
+# IDE settings
+syntax: glob
+nbproject
+.project
+.cproject
+.settings
+.csettings
